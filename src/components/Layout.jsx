@@ -1,14 +1,17 @@
 // src/components/Layout.jsx
 import React from "react";
+import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar.jsx";
 import Footer from "./Footer.jsx";
 
 
-const Layout = ({ children }) => {
+const Layout = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />          {/* Navbar at the top */}
-      <main className="flex-1">{children}</main> {/* Page content */}
+      <div>
+        <Outlet/>
+      </div>
       <Footer />          {/* Optional Footer */}
     </div>
   );
